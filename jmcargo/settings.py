@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-kg=#x-w9%n1y=gk@$)k7q78ynhd^mebtyw6&f)t%9*o+@hd%v+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://jmcargo.onrender.com']
 
 
 # Application definition
