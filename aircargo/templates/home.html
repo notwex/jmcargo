@@ -23,6 +23,12 @@
         <span class="dot" onclick="setSlide(3)"></span>
         <span class="dot" onclick="setSlide(4)"></span>
     </div>
+
+   <!-- Buttons Inside Slideshow -->
+   <div class="slideshow-buttons">
+    <a href="#" class="btn contact-btn">Contact Us</a>
+    <a href="#" class="btn track-btn">Track Now</a>
+   </div>
 </div>
 
 <section class="services-container">
@@ -355,6 +361,59 @@ document.addEventListener("DOMContentLoaded", showSlides);
 
 .prev:hover, .next:hover {
     background-color: rgba(0, 0, 0, 0.8);
+}
+/* Buttons Inside Slideshow */
+.slideshow-buttons {
+    position: absolute;
+    bottom: 50px; /* Position at the bottom of the slideshow */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 20px;
+}
+
+/* General Button Styling */
+.slideshow-buttons .btn {
+    padding: 12px 25px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Contact Us Button */
+.contact-btn {
+    background: #007bff;
+}
+
+.contact-btn:hover {
+    background: #0056b3;
+}
+
+/* Track Now Button */
+.track-btn {
+    background: #28a745;
+}
+
+.track-btn:hover {
+    background: #1e7e34;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .slideshow-buttons {
+        flex-direction: row;
+        gap: 10px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .slideshow-buttons .btn {
+        width: 50%;
+        margin: 0 auto;
+    }
 }
 
 /* Dots Navigation */
