@@ -13,6 +13,7 @@ body {
 
 /* Navigation Bar Styling */
 .navbar {
+    min-height: 120px; /* Set a minimum height */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -30,7 +31,7 @@ body {
 }
 
 .navbar .logo img {
-    height: 40px;
+    height: 60px;
     transition: transform 0.3s ease;
 }
 

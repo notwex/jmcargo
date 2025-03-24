@@ -312,6 +312,8 @@ document.addEventListener("DOMContentLoaded", showSlides);
     width: 100%;
     overflow: hidden;
     box-sizing: border-box; /* Ensure no content overflows */
+    
+ 
 }
 
 /* Slider */
@@ -379,7 +381,7 @@ document.addEventListener("DOMContentLoaded", showSlides);
 /* Responsive Adjustments */
 @media (max-width: 768px) {
     .slide img {
-        height: 300px;
+        height: 60vh;
     }
     .prev, .next {
         padding: 10px;
@@ -439,6 +441,11 @@ document.addEventListener("DOMContentLoaded", showSlides);
     .services-container {
         flex-direction: column;
         align-items: center;
+        padding: 10px; /* Reduce padding for better spacing */
+    }
+    .service-box {
+        max-width: 100%; /* Ensure it takes full width */
+        width: 100%;
     }
 }
 
@@ -512,6 +519,7 @@ document.addEventListener("DOMContentLoaded", showSlides);
     .why-choose-us {
         flex-direction: column;
         text-align: center;
+        padding: 10px; /* Reduce padding for better spacing */
     }
 
     .choose-left {
@@ -526,6 +534,8 @@ document.addEventListener("DOMContentLoaded", showSlides);
 
     .choose-right {
         margin-top: 20px;
+        max-width: 100%; /* Ensure it takes full width */
+        width: 100%;
     }
 }
 
@@ -795,7 +805,7 @@ document.addEventListener("DOMContentLoaded", showSlides);
     }
 
     .team-box {
-        width: 90%;
+        width: 100%;
     }
 }
 
