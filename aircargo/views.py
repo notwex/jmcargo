@@ -30,3 +30,6 @@ def home(request):
 def home_view(request):
     latest_news = News.objects.order_by('-date_posted')[:3]  # Get the 3 latest news posts
     return render(request, 'home.html', {'latest_news': latest_news})
+
+def about(request):
+    return render(request, 'about.html')
