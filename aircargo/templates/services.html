@@ -1,0 +1,196 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- Hero Section -->
+<div class="services-hero">
+    <img src="{% static 'images/service.jpeg' %}" alt="Our Services" class="hero-image">
+    <div class="hero-overlay">
+        <h1>Our Services</h1>
+        <nav class="breadcrumb">
+            <a href="{% url 'home' %}">Home</a> <span>➜</span> <span class="current">Our Services</span>
+        </nav>
+    </div>
+</div>
+
+<!-- Services Section -->
+<section class="services-section">
+    <h2 class="section-heading">Huduma Zetu</h2>
+    <p class="section-subheading">Huduma Bora za Usafirishaji na Logistik</p>
+
+    <div class="services-container">
+        <!-- Card 1: Sea Freight -->
+        <div class="service-card">
+            <img src="{% static 'images/sea.jpg' %}" alt="Sea Freight">
+            <h3>Usafirishaji wa Bahari</h3>
+            <p>Usafirishaji wa baharini ni njia ya usafirishaji ya gharama nafuu kwa kusafirisha mizigo mikubwa kupitia maji ya kimataifa. Inatoa uwezo mkubwa, uaminifu, na ufanisi wa gharama ikilinganishwa na usafirishaji wa anga. Inatumiwa sana kwa mizigo ya kibiashara, usafirishaji wa baharini unajumuisha usafirishaji wa vyombo, usafirishaji wa mizigo ya wingi, na hivyo kuifanya iwe bora kwa biashara ya kimataifa.</p>
+        </div>
+
+        <!-- Card 2: Air Freight -->
+        <div class="service-card">
+            <img src="{% static 'images/air.jpg' %}" alt="Air Freight">
+            <h3>Usafirishaji wa Anga</h3>
+            <p>Usafirishaji wa anga ni njia ya haraka zaidi ya kusafirisha mizigo duniani, inayofaa kwa mizigo ya dharura. Inahakikisha usafirishaji salama na wa ufanisi wa mizigo, ikiwemo bidhaa zinazooza na vitu vya thamani kubwa. Ingawa ni ghali zaidi kuliko usafirishaji wa baharini au kwa nchi kavu, usafirishaji wa anga unatoa uaminifu, kupunguza muda wa usafirishaji, na uunganisho wa kimataifa, na hivyo kuwa muhimu kwa biashara ya kimataifa na logistik.</p>
+        </div>
+
+        <!-- Card 3: Road Freight -->
+        <div class="service-card">
+            <img src="{% static 'images/roadfreight.jpg' %}" alt="Road Freight">
+            <h3>Usafirishaji wa Barabara</h3>
+            <p>Usafirishaji wa barabara ni njia muhimu ya usafirishaji wa mizigo, ikitoa kubadilika, ufanisi wa gharama, na utoaji wa haraka. Inayaunganisha biashara na masoko kwa ufanisi, ikimuwezesha kusafirisha mizigo kupitia miji na mipaka. Kwa maendeleo katika logistik na teknolojia, usafirishaji wa barabara unaendelea kuwa na jukumu muhimu katika biashara ya kimataifa na minyororo ya usambazaji.</p>
+        </div>
+
+        <!-- Card 4: Train Freight -->
+        <div class="service-card">
+            <img src="{% static 'images/trainfreight.jpg' %}" alt="Train Freight">
+            <h3>Usafirishaji wa Treni</h3>
+            <p>Usafirishaji wa treni ni njia ya usafirishaji ya gharama nafuu na yenye ufanisi kwa mizigo ya umbali mrefu. Inatoa uwezo mkubwa, uaminifu, na kupunguza athari za kimazingira ikilinganishwa na malori. Inafaa kwa mizigo ya wingi kama vile makaa ya mawe, nafaka, na vyombo, usafirishaji wa reli unahakikisha utoaji wa mizigo kwa wakati na kupunguza msongamano wa barabarani na matumizi ya mafuta.</p>
+        </div>
+
+        <!-- Card 5: Warehousing Solution -->
+        <div class="service-card">
+            <img src="{% static 'images/warehousing.jpg' %}" alt="Warehousing Solution">
+            <h3>Suluhisho la Hifadhi (Warehouse)</h3>
+            <p>Suluhisho za hifadhi za mizigo hupanua uhifadhi, usimamizi wa hisa, na usambazaji kwa biashara. Zinahakikisha usimamizi mzuri, usalama, na ufuatiliaji wa wakati halisi wa mizigo. Kwa maeneo ya kimkakati na teknolojia ya kisasa, suluhisho hizi hupunguza gharama, kuboresha ufanisi wa minyororo ya usambazaji, na kuongeza kasi ya utoaji. Hifadhi ya kuaminika hupunguza ucheleweshaji, kuhakikisha logistik isiyo na shida na kuridhika kwa wateja katika biashara ya kimataifa.</p>
+        </div>
+
+        <!-- Card 6: Custom Clearance -->
+        <div class="service-card">
+            <img src="{% static 'images/custom.jpg' %}" alt="Custom Clearance">
+            <h3>Ufungaji wa Forodha</h3>
+            <p>Ufungaji wa forodha katika usafirishaji unahusisha mchakato wa kuhakikisha kwamba mizigo inatii kanuni na ushuru wa nchi inayopokea. Inajumuisha kuwasilisha nyaraka zinazohitajika, kulipa ushuru na kodi, na ukaguzi ili kuhakikisha kuwa mizigo inaletwa kisheria, kuruhusu utoaji bila shida na kuepuka ucheleweshaji kwenye mipaka au bandari.</p>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Hero Section */
+.services-hero {
+    position: relative;
+    width: 100%;
+    height: 90vh; /* Adjust height as needed */
+    overflow: hidden;
+}
+
+.hero-image {
+    width: 100%;
+    height: 90vh;
+    object-fit: cover;
+    filter: brightness(70%); /* Darkens the image slightly for better text contrast */
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+}
+
+.hero-overlay h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Breadcrumb Styling */
+.breadcrumb {
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background: none !important;  /* Removes any background */
+}
+
+.breadcrumb a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+.breadcrumb a:hover {
+    color: #f8b400; /* Highlight color on hover */
+}
+
+.current {
+    color: #f8b400;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .hero-overlay h1 {
+        font-size: 2rem;
+    }
+
+    .breadcrumb {
+        font-size: 1rem;
+        white-space: nowrap;  /* Prevents text from wrapping */
+        overflow: hidden;     /* Hides any overflow content */
+        text-overflow: ellipsis; /* Adds ellipsis for overflowed text */
+        display: inline-block; /* Ensures it stays on one line */
+    }
+}
+
+
+/* Services Section */
+.services-section {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.section-heading {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.section-subheading {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* Services Container */
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Service Cards */
+.service-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.service-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.service-card h3 {
+    font-size: 2rem;
+    margin: 15px 0;
+    color: #333;
+}
+
+.service-card p {
+    font-size: 1.2rem;
+    color: #555;
+    padding: 0 15px;
+    text-align: left;
+}
+
+</style>
+
+{% endblock %}

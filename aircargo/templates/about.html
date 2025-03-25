@@ -8,23 +8,93 @@
     <div class="hero-overlay">
         <h1>About Us</h1>
         <nav class="breadcrumb">
-            <a href="{% url 'home' %}">Home</a> <span>•</span> <span class="current">About Us</span>
+            <a href="{% url 'home' %}">Home</a> <span>➜</span> <span class="current">About Us</span>
         </nav>
     </div>
 </div>
+
+<section class="why-choose-us">
+    <div class="choose-left">
+        <h2>Kwa Nini Utuchague</h2>
+        <p>Sisi ni kampuni inayoaminika ya vifaa, tunatoa suluhisho bora na salama za usafirishaji wa mizigo duniani kote.</p>
+
+        <div class="feature">
+            <i class="fas fa-globe"></i>
+            <div>
+                <h4>Huduma za Dunia Nzima</h4>
+                <p>Kusafirisha bidhaa kwa kila eneo duniani kote kwa suluhisho la vifaa zisizo na shida.</p>
+            </div>
+        </div>
+
+        <div class="feature">
+            <i class="fas fa-clock"></i>
+            <div>
+                <h4>Uwasilishaji kwa Wakati</h4>
+                <p>Kuhakikisha utoaji wa mizigo yako kwa wakati na kwa kuaminika bila ucheleweshaji.</p>
+            </div>
+        </div>
+
+        <div class="feature">
+            <i class="fas fa-headset"></i>
+            <div>
+                <h4>Msaada wa Simu 24/7</h4>
+                <p>Timu yetu inayojitolea inapatikana masaa 24 kwa siku ili kukusaidia wakati wowote.</p>
+            </div>
+        </div>
+
+        <div class="feature">
+            <i class="fas fa-shield-alt"></i>
+            <div>
+                <h4>Usalama wa Mizigo</h4>
+                <p>Kutoa usafirishaji salama na wa kuaminika kwa mizigo yako ya thamani.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="choose-right">
+        <img src="{% static 'images/whychoose.jpg' %}"  alt="Why Choose Us">
+    </div>
+</section>
+
+<section class="team-section">
+    <h2>Timu Yetu</h2>
+    <p>Kutana na wataalamu wetu waliyojitolea</p>
+    <div class="team-container">
+        <div class="team-box">
+            <img src="{% static 'images/ceo.jpg' %}" alt="Team Member 1">
+            <h3>Jamali Mbarouk</h3>
+            <p>Chief Executive Officer</p>
+        </div>
+        <div class="team-box">
+            <img src="{% static 'images/manager.jpg' %}"  alt="Team Member 2">
+            <h3>Abdulkarim Shabani</h3>
+            <p>Operations Manager</p>
+        </div>
+        <div class="team-box">
+            <img src="{% static 'images/coo.jpg' %}"  alt="Team Member 3">
+            <h3>Ahmedi Kaisi</h3>
+            <p>Chief Operation Officer</p>
+        </div>
+        <div class="team-box">
+            <img src="{% static 'images/IT.jpg' %}" alt="Team Member 4">
+            <h3>Seif Ally</h3>
+            <p>IT Officer</p>
+        </div>
+    </div>
+</section>
 
 <style>
     /* Hero Section */
 .about-hero {
     position: relative;
     width: 100%;
-    height: 60vh; /* Adjust height as needed */
+    height: 90vh; /* Adjust height as needed */
     overflow: hidden;
 }
 
 .hero-image {
     width: 100%;
-    height: 100%;
+    height: 90vh;
     object-fit: cover;
     filter: brightness(70%); /* Darken image slightly for better text visibility */
 }
@@ -51,10 +121,11 @@
     justify-content: center;
     align-items: center;
     gap: 10px;
+    background: none !important;  /* Removes any background */
 }
 
 .breadcrumb a {
-   
+    color: white;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease-in-out;
@@ -76,6 +147,164 @@
 
     .breadcrumb {
         font-size: 1rem;
+    }
+}
+
+/* Why Choose Us Section */
+.why-choose-us {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 10%;
+    background: #f8f9fa;
+    width: 100%;
+}
+
+.choose-left {
+    flex: 1;
+    max-width: 600px;
+}
+
+.choose-left h2 {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.choose-left p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 15px;
+}
+
+.feature i {
+    font-size: 28px;
+    color: #007bff;
+    background: #e6f0ff;
+    padding: 12px;
+    border-radius: 50%;
+}
+
+.feature h4 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.feature p {
+    font-size: 16px;
+    color: #666;
+}
+
+.choose-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.choose-right img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .why-choose-us {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px; /* Reduce padding for better spacing */
+    }
+
+    .choose-left {
+        max-width: 100%;
+    }
+
+    .feature {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .choose-right {
+        margin-top: 20px;
+        max-width: 100%; /* Ensure it takes full width */
+        width: 100%;
+    }
+}
+
+.team-section {
+    text-align: center;
+    padding: 60px 20px;
+    background: white; 
+}
+
+.team-section h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.team-section p {
+    font-size: 1.2rem;
+    color: #777;
+    margin-bottom: 40px;
+}
+
+.team-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap; /* Makes it responsive */
+}
+
+.team-box {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.team-box:hover {
+    transform: translateY(-10px);
+}
+
+.team-box img {
+    width: 100%;
+    height: auto;
+}
+
+.team-box h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin: 15px 0 5px;
+}
+
+.team-box p {
+    font-size: 1rem;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .team-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .team-box {
+        width: 100%;
     }
 }
 
