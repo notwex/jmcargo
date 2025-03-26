@@ -24,7 +24,7 @@
             <div class="news-content">
                 <span class="news-date">{{ news.date_posted|date:"M d, Y" }}</span>
                 <h3 class="news-title">{{ news.title }}</h3>
-                <p class="news-text">{{ news.content|truncatewords:20 }}</p>
+                <p class="news-text">{{ news.content|truncatewords:20|safe }}</p>
                 <a href="{% url 'news_detail' news.id %}" class="read-more">Read More</a>
             </div>
         </div>

@@ -16,8 +16,8 @@
     <!-- Left Column (Full News) -->
     <div class="news-content">
         <img src="{{ news.image.url }}" alt="News Image" class="news-image">
-        <h2 class="news-title">{{ news.title }}</h2>
         <span class="news-date">{{ news.date_posted|date:"M d, Y" }}</span>
+        <h2 class="news-title">{{ news.title }}</h2>
         <div class="news-text">{{ news.content|safe }}</div> <!-- Use |safe to render rich text -->
         <a href="{% url 'blog' %}" class="btn btn-secondary">Back to News</a>
     </div>
@@ -28,8 +28,9 @@
         {% for more in more_news %}
         <div class="sidebar-news-box">
             <img src="{{ more.image.url }}" alt="More News" class="sidebar-image">
-            <h4 class="sidebar-title">{{ more.title }}</h4>
-            <a href="{% url 'news_detail' more.id %}" class="sidebar-link">Read More</a>
+            <h4 class="sidebar-title">
+                <a href="{% url 'news_detail' more.id %}" class="sidebar-link">{{ more.title }}</a> <!-- Link title to detail page -->
+            </h4>
         </div>
         {% endfor %}
     </div>

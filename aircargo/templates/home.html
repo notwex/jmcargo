@@ -238,7 +238,12 @@
         <div class="contact-info">
             <h2>Wasiliana Nasi</h2>
             <p>Tupo hapa kukusaidia. Wasiliana nasi kwa maswali kuhusu usafirishaji na logistik.</p>
-            <p><i class="fas fa-phone"></i> +255 714 339 265</p>
+            <p><a href="mailto:gamaltravelagency@gmail.com"><i class="fas fa-envelope"></i> gamaltravelagency@gmail.com</a></p>
+             <p><a href="tel:+255714339265"><i class="fas fa-phone"></i> +255714 339 265</a> Mkurugenzi Mkuu</p>
+             <p><a href="tel:+255714339265"><i class="fas fa-phone"></i> +255688877141</a> Afisa masoko</p>
+         
+             <p><i class="fas fa-map-marker-alt"></i>  广州市越秀区麓景路8号亿达商贸中心508室（小北办公室）</p>
+             <p><a href="tel:+255714339265"><i class="fas fa-phone"></i> 16602088855</a> Mawasiliano ya china</p>
         </div>
 
         <!-- Right Side (Form) -->
@@ -275,7 +280,7 @@
             <div class="news-content">
                 <span class="news-date">{{ news.date_posted|date:"M d, Y" }}</span>
                 <h3 class="news-title">{{ news.title }}</h3>
-                <p class="news-text">{{ news.content|truncatewords:20 }}</p>
+                <p class="news-text">{{ news.content|truncatewords:20|safe }}</p>
                 <a href="{% url 'news_detail' news.id %}" class="read-more">Read More</a>
             </div>
         </div>
