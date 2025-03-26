@@ -1,9 +1,10 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from .models import ContactMessage
 from .models import News
 from .models import Contact
 from django.contrib import messages
+from .models import Cargo
 
 # Create your views here.
 def home(request):
@@ -30,7 +31,7 @@ def home(request):
 
 
 def home_view(request):
-    latest_news = News.objects.order_by('-date_posted')[:3]  # Get the 3 latest news posts
+    latest_news = News.objects.order_by('-date_posted')[:10]  # Get the 10 latest news posts
     return render(request, 'home.html', {'latest_news': latest_news})
 
 def about(request):
@@ -55,3 +56,27 @@ def contact_view(request):
         return redirect('contact')
 
     return render(request, 'contact.html')
+
+def tracking_result(request):
+    tracking_number = request.GET.get('tracking_number', None)
+    if tracking_number:
+        try:
+            cargo = Cargo.objects.get(tracking_number=tracking_number)
+            return render(request, 'tracking_result.html', {'cargo': cargo})
+        except Cargo.DoesNotExist:
+            messages.success(request, 'Tracking number not found.')
+            return render(request, 'home.html')
+    return render(request, 'home.html', {'error': 'Please enter a tracking number.'})
+
+def news_list(request):
+    latest_news = News.objects.all().order_by('-date_posted')[:5]  # Get latest 5 news
+    return render(request, 'home.html', {'latest_news': latest_news})
+
+def news_detail(request, news_id):
+    news = get_object_or_404(News, id=news_id)
+    more_news = News.objects.exclude(id=news_id).order_by('-date_posted')[:5]  # Get more news
+    return render(request, 'news_detail.html', {'news': news, 'more_news': more_news})
+
+def blog(request):
+    latest_news = News.objects.order_by('-date_posted')[:10]  # Get the 10 latest news posts
+    return render(request, 'blog.html', {'latest_news': latest_news})

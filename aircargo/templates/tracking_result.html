@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-sm" style="margin-top: 80px;">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="text-center">Maelezo ya Ufuatiliaji wa Shehena</h3>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <!-- Tracking Number -->
+                        <div class="col-md-6 mb-4">
+                            <h5><i class="fas fa-barcode"></i> Nambari ya Ufuatiliaji</h5>
+                            <p>{{ cargo.tracking_number }}</p>
+                        </div>
+                        
+                        <!-- Carrier Name -->
+                        <div class="col-md-6 mb-4">
+                            <h5><i class="fas fa-shipping-fast"></i> Jina la Mtoa Huduma</h5>
+                            <p>{{ cargo.carrier_name }}</p>
+                        </div>
+                        
+                        <!-- Transport Mode -->
+                        <div class="col-md-6 mb-4">
+                            <h5><i class="fas fa-rocket"></i> Njia ya Usafirishaji</h5>
+                            <p>{{ cargo.transport_mode }}</p>
+                        </div>
+
+                        <!-- Departure Location -->
+                        <div class="col-md-6 mb-4">
+                            <h5><i class="fas fa-map-marker-alt"></i> Mahali mzigo ulipoondoka</h5>
+                            <p>{{ cargo.departure_location }}</p>
+                        </div>
+
+                        <!-- Destination Location -->
+                        <div class="col-md-6 mb-4">
+                            <h5><i class="fas fa-map-marker"></i> Mahali mzigo unapoelekea</h5>
+                            <p>{{ cargo.destination_location }}</p>
+                        </div>
+                        
+                        <!-- Current Location -->
+                        <div class="col-md-6 mb-4">
+                            <h5><i class="fas fa-location-arrow"></i> mahali mzigo ulipo kwa sasa</h5>
+                            <p>{{ cargo.current_location }}</p>
+                        </div>
+                        
+                        <!-- Estimated Delivery -->
+                        <div class="col-md-6 mb-4">
+                            <h5><i class="fas fa-calendar-alt"></i> Makadirio ya Uwasilishaji wa mzigo</h5>
+                            <p>{{ cargo.estimated_delivery }}</p>
+                        </div>
+                        
+                        <!-- Status -->
+                        <div class="col-md-6 mb-4">
+                            <h5><i class="fas fa-info-circle"></i> Hali</h5>
+                            <p>{{ cargo.status }}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer text-center">
+                    <a href="{% url 'home' %}" class="btn btn-primary">Rudi ukurasa mkuu</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

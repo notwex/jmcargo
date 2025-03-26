@@ -23,13 +23,24 @@
         <span class="dot" onclick="setSlide(3)"></span>
         <span class="dot" onclick="setSlide(4)"></span>
     </div>
-
+   
    <!-- Buttons Inside Slideshow -->
    <div class="slideshow-buttons">
     <a href="/contact/" class="btn contact-btn">Wasiliana Nasi</a>
-    <a href="#" class="btn track-btn">Track Now</a>
+    <a href="#" class="btn track-btn" id="trackBtn">Track Mzigo</a>
    </div>
+   
 </div>
+
+<!-- Modal -->
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeModal">&times;</span>
+        <h2>Ingiza Nambari yako ya Ufuatiliaji</h2>
+        <input type="text" class="track-input" placeholder="Track Code Entry" id="trackCode">
+        <button class="btn" id="submitTrack">Track</button>
+    </div>
+ </div>
 
 <section class="services-container">
     <div class="service-box">
@@ -142,7 +153,7 @@
 </section>
 
 <section class="testimonials">
-    <h2>Mashuhuda(Testimonials)</h2>
+    <h2>Mashuhuda</h2>
     <p>Wanachosema Wateja Wetu</p>
 
     <div class="testimonial-slider">
@@ -265,7 +276,7 @@
                 <span class="news-date">{{ news.date_posted|date:"M d, Y" }}</span>
                 <h3 class="news-title">{{ news.title }}</h3>
                 <p class="news-text">{{ news.content|truncatewords:20 }}</p>
-                <a href="#" class="read-more">Read More</a>
+                <a href="{% url 'news_detail' news.id %}" class="read-more">Read More</a>
             </div>
         </div>
         {% endfor %}
@@ -309,6 +320,39 @@ setInterval(() => {
 // Initialize slideshow
 document.addEventListener("DOMContentLoaded", showSlides);
 
+// TRACKING RESULT....................................
+        // Get modal elements
+        var modal = document.getElementById("myModal");
+        var btn = document.getElementById("trackBtn");
+        var span = document.getElementById("closeModal");
+        
+        // Open the modal when the user clicks the button
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        // Close the modal when the user clicks on <span> (x)
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // Close the modal when the user clicks anywhere outside of the modal
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+       // Redirect to tracking details page when the Track button is clicked
+document.getElementById("submitTrack").onclick = function() {
+    var trackingNumber = document.getElementById("trackCode").value;
+    if(trackingNumber) {
+        window.location.href = "/tracking-result/?tracking_number=" + encodeURIComponent(trackingNumber);
+    } else {
+        alert("Please enter a tracking number.");
+    }
+};
+  
 </script>
 
 <style>
@@ -1053,5 +1097,60 @@ button:hover {
     }
 }
 
+/* ...................TRACKING NUMBER................... */
+        .btn {
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            margin-top: 70px;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 400px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .track-input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
 </style>
 {% endblock %}

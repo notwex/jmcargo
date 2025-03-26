@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'aircargo.apps.AircargoConfig',
+    'ckeditor',
 ]
 
 MIDDLEWARE = [
